@@ -2,26 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    height: 100%;
+    background-color: #2D2A30;
+    box-sizing: border-box;
 }
+
+.sectionContainer {
+    @apply container max-w-screen-xl mx-auto px-3
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 600px;
+    padding: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+.swiper-pagination {
+    position: relative;
+    display: flex;
+    bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 !important;
+    padding: 15px;
+    border-radius: 0;
+    color: white;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet > b {
+    opacity: 0.2;
+    color: white;
+    font-size: 40px;
+}
+
+
+.swiper-pagination-bullet-active > b {
+    opacity: 0.8;
+}
+
+
+.swiper-pagination-bullet {
+    background-color: #8167C9;
+    transition: background-color .3s ease-in;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #3a396b;
+}
+
+.swiper-pagination-bullet:not(:last-child) {
+    border-right: 1px solid rgba(153, 164, 200, 0.9);
+}
+
+
